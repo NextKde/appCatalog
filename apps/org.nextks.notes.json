@@ -1,0 +1,18 @@
+{
+  "key": "notes",
+  "appId": "org.nextks.notes",
+  "format": "flatpak",
+  "name": {
+    "en": "NextNotes",
+    "zh-CN": "笔记",
+    "pt-BR": "Notas"
+  },
+  "description": {
+    "en": "Write and organize Markdown notes",
+    "zh-CN": "编写和整理 Markdown 笔记",
+    "pt-BR": "Escreva e organize notas em Markdown"
+  },
+  "repository": "NextKde/NkNotes",
+  "manifest": "org.nextks.notes.flatpak-release.json",
+  "status": "active"
+}
