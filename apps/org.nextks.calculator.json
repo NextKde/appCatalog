@@ -4,10 +4,13 @@
   "format": "flatpak",
   "name": {
     "en": "Calculator",
-    "zh-CN": "计算器"
+    "zh-CN": "计算器",
+    "pt-BR": "Calculadora"
   },
   "description": {
-    "en": "Everyday calculations, made simple"
+    "en": "Everyday calculations, made simple",
+    "zh-CN": "进行日常计算",
+    "pt-BR": "Faça cálculos do dia a dia"
   },
   "repository": "NextKde/kos-apps",
   "manifest": "org.nextks.calculator.flatpak-release.json",

@@ -1,5 +1,7 @@
 # GitHub Release / Flatpak contract
 
+[简体中文](RELEASE-CONTRACT.zh-CN.md) · [Qt runtime guide](docs/QtRuntime.md)
+
 All application discovery uses `https://api.github.com/repos/OWNER/REPOSITORY/releases/latest`.
 Only published stable `vX.Y.Z` releases are accepted. Each required asset must be unique in that release.
 Asset downloads are confined to the registered GitHub repository and GitHub's release CDN redirects.
@@ -23,7 +25,7 @@ SHA-256 describes the exact bytes of the `.flatpak` attachment. Do not hash the 
       "metadata": "<Base64 of exact Flatpak application metadata bytes>",
       "metadataSha256": "<SHA-256 of decoded metadata, including trailing newline>",
       "installedSize": 234567,
-      "runtime": {"ref": "runtime/org.kde.Platform/x86_64/6.8"},
+      "runtime": {"ref": "runtime/org.kde.Platform/x86_64/6.11"},
       "requiredExtensions": []
     }
   }

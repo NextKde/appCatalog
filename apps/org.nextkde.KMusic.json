@@ -4,12 +4,15 @@
   "format": "flatpak",
   "name": {
     "en": "KMusic",
-    "zh-CN": "KMusic"
+    "zh-CN": "KMusic",
+    "pt-BR": "KMusic"
   },
   "description": {
-    "en": "Discover and listen to music"
+    "en": "Discover and listen to music",
+    "zh-CN": "浏览与播放音乐",
+    "pt-BR": "Explore e reproduza músicas"
   },
-  "repository": "NextKde/KMusic",
+  "repository": "NextKde/NkMusic",
   "manifest": "flatpak-release.json",
   "status": "active",
   "publisher": {

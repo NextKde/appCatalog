@@ -4,10 +4,13 @@
   "format": "flatpak",
   "name": {
     "en": "Weather",
-    "zh-CN": "天气"
+    "zh-CN": "天气",
+    "pt-BR": "Clima"
   },
   "description": {
-    "en": "Forecasts for your favorite places"
+    "en": "Forecasts for your favorite places",
+    "zh-CN": "查看天气与预报",
+    "pt-BR": "Veja o clima e a previsão"
   },
   "repository": "NextKde/kos-apps",
   "manifest": "org.nextks.weather.flatpak-release.json",

@@ -4,10 +4,13 @@
   "format": "flatpak",
   "name": {
     "en": "Calendar",
-    "zh-CN": "日历"
+    "zh-CN": "日历",
+    "pt-BR": "Calendário"
   },
   "description": {
-    "en": "Plan your days and events"
+    "en": "Plan your days and events",
+    "zh-CN": "安排日程与活动",
+    "pt-BR": "Organize seus dias e eventos"
   },
   "repository": "NextKde/kos-apps",
   "manifest": "org.nextks.calendar.flatpak-release.json",

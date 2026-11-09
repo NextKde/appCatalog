@@ -4,10 +4,13 @@
   "format": "flatpak",
   "name": {
     "en": "ListenFree",
-    "zh-CN": "ListenFree"
+    "zh-CN": "ListenFree",
+    "pt-BR": "ListenFree"
   },
   "description": {
-    "en": "Discover and listen to music"
+    "en": "Discover and listen to music",
+    "zh-CN": "探索与聆听音乐",
+    "pt-BR": "Descubra e ouça músicas"
   },
   "repository": "NextKde/ListenFree",
   "manifest": "flatpak-release.json",

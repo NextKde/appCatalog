@@ -1,63 +1,48 @@
 # NextKde appCatalog
 
-NextKde「应用与服务」的应用投稿目录。**此目录的客户端改造尚待虚拟机验收，不能据此声明现有发行版已支持。**
+**English** · [简体中文](README.zh-CN.md) · [Português (Brasil)](README.pt-BR.md)
 
-应用安装包保存在开发者自己的 **GitHub Releases**。本仓库只维护应用身份、介绍和发行仓库，不托管或执行第三方安装脚本。
+The submission repository for NextKde Settings → **Applications and services**.
+Applications live in their developers' **GitHub Releases**. This repository publishes a signed list of approved application identities and release locations; it does not host installers or execute submission scripts.
 
-## 开发者如何上架
+The client integration is under development. A repository entry alone does not mean an application is available in an existing NextKde release: the client must support signed catalogs, and the application must publish a compatible package. Catalog releases and client releases are separate.
 
-1. 准备稳定的应用 ID 和 Flatpak 单文件包，在自己的 GitHub 仓库创建正式 Release，tag 使用 `vX.Y.Z`，不使用草稿或预发行。
-2. 上传 `.flatpak` 包及对应发行清单（见 [发行协议](RELEASE-CONTRACT.md)）。SHA-256 必填，开发者签名可选。
-3. 在 `apps/` 新建 `<appId>.json`，按下面的条目格式提交 PR。
-4. 维护者核对仓库归属、应用身份、安装权限和发行附件，合并后发布签名目录。客户端刷新后即可显示。
+## Submit an application
+
+1. Build a Flatpak bundle with a stable application ID. Read the [Qt runtime and packaging guide](docs/QtRuntime.md).
+2. Publish a non-draft, non-prerelease GitHub Release tagged `vX.Y.Z`. Attach the bundle and the JSON [release manifest](RELEASE-CONTRACT.md), including SHA-256. Developer signatures are optional.
+3. Add `apps/<appId>.json` in a pull request, following this example and the [localization rules](docs/Localization.md).
+4. Maintainers review ownership, identity, permissions and release assets, merge the entry, then publish a new signed catalog. Clients learn the new app on refresh, without rebuilding Settings.
 
 ```json
 {
   "appId": "org.example.Notes",
   "key": "notes",
   "format": "flatpak",
-  "name": {"en": "Notes", "zh-CN": "笔记"},
-  "description": {"en": "A small notes application", "zh-CN": "轻量笔记应用"},
+  "name": {"en": "Notes", "zh-CN": "笔记", "pt-BR": "Notas"},
+  "description": {"en": "A small notes application", "zh-CN": "轻量笔记应用", "pt-BR": "Um aplicativo simples de notas"},
   "repository": "example-org/notes",
   "manifest": "flatpak-release.json",
   "status": "active"
 }
 ```
 
-`repository` 必须是 GitHub 的 `owner/repository`。当前只安装 Flatpak；其他包格式需要客户端对应后端，不能通过目录绕过。
+`repository` is a GitHub `owner/repository`, not a URL. Use the canonical repository name; repository renames require catalog review. `appId` and `key` are stable identities, never translated. Flatpak is the only implemented package adapter. Future formats require a client adapter; catalogs cannot supply install commands.
 
-可选 `publisher` 包含 `fingerprint`（完整主密钥指纹）及 `publicKey`（二进制公钥的 Base64）。一旦配置，客户端严格要求 `.sig` 和包内 commit 签名，不会因签名缺失或失败退回无签名模式。没有配置时依赖已批准的 GitHub 仓库、HTTPS 和 SHA-256；仓库被盗后同时替换包和摘要不在该模式的防护范围内。
+Normal new application versions need only a new application Release. No catalog PR is needed unless its identity, description, trust policy or release location changes. To delist, remove the entry or set `status` to `withdrawn`; use `revoked` to stop trusting it. These block later installs/updates without deleting installed apps or user data.
 
-发布应用新版通常不改本目录。下架可将 `status` 改为 `withdrawn` 或删除条目；停止信任可用 `revoked`。这些操作阻止后续安装/更新，不删除用户已有应用或资料。
+## Trust and publication
 
-## 维护者发布目录
+Catalog signatures are mandatory; package SHA-256 is mandatory. Optional `publisher` contains a full primary-key `fingerprint` and a Base64 binary OpenPGP `publicKey`. If present, both the release manifest signature (`<manifest>.sig`) and the Flatpak commit signature are required. Failed or missing signatures never fall back to unsigned mode.
 
-PR 工作流只检查数据结构，不下载或运行投稿者的程序，不接触签名私钥。
+Without a publisher key, package authenticity depends on the approved GitHub account and HTTPS. SHA-256 detects a mismatched download, but cannot stop an attacker controlling the repository from replacing both package and manifest. Neither signature nor hash proves that an app is benign.
 
-1. 审核并合并投稿。在 GitHub 设置 `catalog-release` environment，由维护者配置审批人员。
-2. environment secret `CATALOG_SIGNING_PRIVATE_KEY` 保存 ASCII armored 签名私钥；需要口令时配置 `CATALOG_SIGNING_PASSPHRASE`。
-3. 手动运行 Publish catalog，填写高于历史所有发布的整数序号。默认有效期 30 天，过期前重新发布。
-4. 工作流生成 `catalog.json`，对其原始字节签名，创建正式 GitHub Release，附件为 `catalog.json` 和 `catalog.json.sig`。
+See [Maintainer publication](MAINTAINING.md) for secrets, expiry, sequence numbers and release steps. The seed entries retain their existing publisher signatures; catalog publication does not publish their application bundles.
 
-首次发布前必须配置信任根对应的私钥。仓库中的 `catalog-public.gpg` 及 `catalog-fingerprint.txt` 是当前客户端 bootstrap 信任根的公开信息；私钥不在仓库中。当前沿用核心已内置的发布公钥作为启动信任根，不自动生成或偷偷替换密钥。若改用独立目录密钥，首次客户端发行前必须同步 pin 新公钥。
+## Third-party sources
 
-初始五款应用保留现有开发者签名要求。目录发布不会自动替这些应用创建可安装的 Release。
+Use the same catalog format in your own GitHub repository, with your own signing key and a unique `sourceId`. The client requires `catalog.json` and `catalog.json.sig` in a stable GitHub Release. Follow [Maintainer publication](MAINTAINING.md), including changing the workflow's source ID and pinned public key.
 
-本地准备（在开发虚拟机执行）：
+Users add the source in Settings → Applications and services → Manage application sources, supplying its ID, GitHub `owner/repository`, binary `.gpg` public-key file and full fingerprint, then explicitly accepting trust. Obtain the fingerprint through an independently trusted channel. The source ID must match the signed document. Sources cannot silently replace each other's app IDs. Removing a source keeps installed app management and rollback-protection history.
 
-```sh
-python3 build_catalog.py --check
-python3 build_catalog.py --sequence 1
-# 用真实维护者密钥签原始文件，签完不得重新格式化 JSON。
-gpg --batch --armor --detach-sign --output dist/catalog.json.sig dist/catalog.json
-```
-
-## 第三方目录
-
-可以复制此仓库的格式，在自己的 GitHub 仓库发布签名目录。`sourceId` 必须与用户添加时填写的来源标识一致，使用自己的公钥和完整指纹。
-
-用户在 Settings → 应用与服务 → 管理应用来源中，填写来源标识、GitHub 仓库、公钥文件路径及完整指纹，明确选择信任后添加。公钥文件为 `gpg --export KEY > catalog-public.gpg` 产生的二进制文件。
-
-不同目录不能静默覆盖相同应用 ID。下架或移除目录后仍保留已安装应用的打开/卸载入口。
-
-目录签名证明目录由受信维护者发布；摘要证明下载与发行清单一致。这些均不保证应用没有恶意行为或漏洞。
+The [NextKde architecture guide](https://github.com/NextKde/NextKde/blob/main/docs/app-store/SignedCatalog.md) describes the client and automatic update notifications. Settings lists available versions; the background agent checks metadata and notifies, but does not install updates automatically.

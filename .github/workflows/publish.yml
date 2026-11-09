@@ -22,7 +22,7 @@ jobs:
           SEQUENCE: ${{ inputs.sequence }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          python3 build_catalog.py --sequence "$SEQUENCE"
+          python3 build_catalog.py --source-id nextkde --sequence "$SEQUENCE"
           # Fail closed if Release history cannot be read. No duplicate or older tags.
           gh api --paginate "repos/$GITHUB_REPOSITORY/releases" --jq '.[].tag_name' > /tmp/catalog-tags
           python3 - <<'PY'
@@ -43,7 +43,7 @@ jobs:
           test -n "$CATALOG_SIGNING_PRIVATE_KEY"
           printf '%s' "$CATALOG_SIGNING_PRIVATE_KEY" | gpg --batch --import
           fingerprint=$(cat catalog-fingerprint.txt)
-          printf '%s' "$CATALOG_SIGNING_PASSPHRASE" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --local-user "$fingerprint" --armor --detach-sign --output dist/catalog.json.sig dist/catalog.json
+          printf '%s' "$CATALOG_SIGNING_PASSPHRASE" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --local-user "$fingerprint" --digest-algo SHA256 --armor --detach-sign --output dist/catalog.json.sig dist/catalog.json
           gpgv --keyring "$PWD/catalog-public.gpg" dist/catalog.json.sig dist/catalog.json
       - name: Publish GitHub Release
         env:

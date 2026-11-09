@@ -9,6 +9,17 @@ import re
 
 ROOT = Path(__file__).resolve().parent
 
+def validate_locales(value, maximum):
+    if not isinstance(value, dict) or not 1 <= len(value) <= 32 or not value.get("en"):
+        raise ValueError("Localized fields require an English fallback and at most 32 locales")
+    for locale, text in value.items():
+        if not re.fullmatch(r"[a-z]{2,3}(-[A-Za-z0-9]{2,8})*", locale):
+            raise ValueError("Invalid locale tag")
+        if not isinstance(text, str) or not text.strip() or len(text) > maximum:
+            raise ValueError("Invalid localized text length")
+        if any(ord(c) < 32 or 127 <= ord(c) <= 159 for c in text):
+            raise ValueError("Localized text must not contain control characters")
+
 def load_apps():
     apps, ids, keys = [], set(), set()
     for path in sorted((ROOT / "apps").glob("*.json")):
@@ -30,11 +41,14 @@ def load_apps():
             raise ValueError("Only Flatpak is implemented in the first client release")
         if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,180}\.json", app["manifest"]):
             raise ValueError("Invalid release manifest filename")
-        if not isinstance(app.get("name"), dict) or not app["name"].get("en"):
-            raise ValueError("An English fallback name is required")
+        validate_locales(app.get("name"), 120)
+        validate_locales(app.get("description"), 600)
         if app.get("status", "active") not in ("active", "withdrawn", "revoked"):
             raise ValueError("Invalid entry status")
-        if publisher := app.get("publisher"):
+        if "publisher" in app:
+            publisher = app["publisher"]
+            if not isinstance(publisher, dict) or not publisher:
+                raise ValueError("Invalid optional publisher")
             if not re.fullmatch(r"[0-9A-F]{40}([0-9A-F]{24})?", publisher["fingerprint"]):
                 raise ValueError("Use the full primary key fingerprint")
             key_bytes = base64.b64decode(publisher["publicKey"], validate=True)
