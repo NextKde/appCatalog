@@ -2,16 +2,16 @@
 
 [English](README.md) · **简体中文** · [Português (Brasil)](README.pt-BR.md)
 
-NextKde「应用与服务」的应用投稿目录。**此目录的客户端改造尚待虚拟机验收，不能据此声明现有发行版已支持。**
+NextKde「应用与服务」的应用投稿目录。[首份签名目录 catalog-1](https://github.com/NextKde/appCatalog/releases/tag/catalog-1)已发布；客户端改动见 [NextKde PR #340](https://github.com/NextKde/NextKde/pull/340)。现有已发行客户端不一定支持该目录，目录条目也不代表应用已发布可安装包。
 
 应用安装包保存在开发者自己的 **GitHub Releases**。本仓库只维护应用身份、介绍和发行仓库，不托管或执行第三方安装脚本。
 
-投稿者请同时阅读 [Qt runtime 与打包指南](docs/QtRuntime.zh-CN.md)、[多语言约定](docs/Localization.zh-CN.md)和[发行协议](RELEASE-CONTRACT.zh-CN.md)。客户端架构见 [NextKde 主仓库](https://github.com/NextKde/NextKde/blob/main/docs/app-store/SignedCatalog.zh-CN.md)。
+投稿者请同时阅读 [Qt runtime 与打包指南](docs/QtRuntime.zh-CN.md)、[多语言约定](docs/Localization.zh-CN.md)和[发行协议](RELEASE-CONTRACT.zh-CN.md)。客户端架构见 [NextKde 主仓库](https://github.com/NextKde/NextKde/blob/0f8fe2779a049af7d873c7538ab310e67d1fc8be/docs/app-store/SignedCatalog.zh-CN.md)。
 
 ## 开发者如何上架
 
 1. 准备稳定的应用 ID 和 Flatpak 单文件包，在自己的 GitHub 仓库创建正式 Release，tag 使用 `vX.Y.Z`，不使用草稿或预发行。
-2. 上传 `.flatpak` 包及对应发行清单（见 [发行协议](RELEASE-CONTRACT.md)）。SHA-256 必填，开发者签名可选。
+2. 上传 `.flatpak` 包及对应发行清单（见 [发行协议](RELEASE-CONTRACT.zh-CN.md)）。SHA-256 必填，开发者签名可选。
 3. 在 `apps/` 新建 `<appId>.json`，按下面的条目格式提交 PR。
 4. 维护者核对仓库归属、应用身份、安装权限和发行附件，合并后发布签名目录。客户端刷新后即可显示。
 
@@ -36,6 +36,8 @@ NextKde「应用与服务」的应用投稿目录。**此目录的客户端改�
 
 ## 维护者发布目录
 
+完整步骤见[维护指南](MAINTAINING.zh-CN.md)。可在虚拟机生成/验签、在保管密钥的机器签名后手工发布，无需把私钥上传 GitHub；以下是可选的 Actions 流程。
+
 PR 工作流只检查数据结构，不下载或运行投稿者的程序，不接触签名私钥。
 
 1. 审核并合并投稿。在 GitHub 设置 `catalog-release` environment，由维护者配置审批人员。
@@ -43,7 +45,7 @@ PR 工作流只检查数据结构，不下载或运行投稿者的程序，不�
 3. 手动运行 Publish catalog，填写高于历史所有发布的整数序号。默认有效期 30 天，过期前重新发布。
 4. 工作流生成 `catalog.json`，对其原始字节签名，创建正式 GitHub Release，附件为 `catalog.json` 和 `catalog.json.sig`。
 
-首次发布前必须配置信任根对应的私钥。仓库中的 `catalog-public.gpg` 及 `catalog-fingerprint.txt` 是当前客户端 bootstrap 信任根的公开信息；私钥不在仓库中。当前沿用核心已内置的发布公钥作为启动信任根，不自动生成或偷偷替换密钥。若改用独立目录密钥，首次客户端发行前必须同步 pin 新公钥。
+发布必须使用信任根对应的私钥。仓库中的 `catalog-public.gpg` 及 `catalog-fingerprint.txt` 是当前客户端 bootstrap 信任根的公开信息；私钥不在仓库中。当前沿用核心已内置的发布公钥作为启动信任根，不自动生成或偷偷替换密钥。若改用独立目录密钥，首次客户端发行前必须同步 pin 新公钥。
 
 初始五款应用保留现有开发者签名要求。目录发布不会自动替这些应用创建可安装的 Release。
 
@@ -58,7 +60,7 @@ gpg --batch --armor --detach-sign --output dist/catalog.json.sig dist/catalog.js
 
 ## 第三方目录
 
-可以复制此仓库的格式，在自己的 GitHub 仓库发布签名目录。`sourceId` 必须与用户添加时填写的来源标识一致，使用自己的公钥和完整指纹。
+复制时还需修改发布工作流的 `--source-id nextkde`，详见维护指南。可以复制此仓库的格式，在自己的 GitHub 仓库发布签名目录。`sourceId` 必须与用户添加时填写的来源标识一致，使用自己的公钥和完整指纹。
 
 用户在 Settings → 应用与服务 → 管理应用来源中，填写来源标识、GitHub 仓库、公钥文件路径及完整指纹，明确选择信任后添加。公钥文件为 `gpg --export KEY > catalog-public.gpg` 产生的二进制文件。
 

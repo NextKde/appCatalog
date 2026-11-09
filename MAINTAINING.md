@@ -1,5 +1,7 @@
 # Maintaining and publishing a catalog
 
+[简体中文](MAINTAINING.zh-CN.md) · [Português (Brasil)](MAINTAINING.pt-BR.md)
+
 Submission PRs run structural validation on a GitHub-hosted VM. They do not run submitted apps, download their installers or receive signing secrets. Structural checks are not a security review.
 
 Before merging, review repository ownership, app ID and existing-ID conflicts, stable Release assets, Flatpak permissions, runtime/extension availability, SHA-256 and optional publisher identity. Test installation and update in a disposable VM. Do not accept scripts or arbitrary download URLs in entries. Translation-only changes must not change app identity or trust.
