@@ -1,0 +1,52 @@
+name: Publish catalog
+on:
+  workflow_dispatch:
+    inputs:
+      sequence:
+        description: Increasing catalog sequence (never reuse)
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: catalog-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    environment: catalog-release
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble
+        env:
+          SEQUENCE: ${{ inputs.sequence }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 build_catalog.py --sequence "$SEQUENCE"
+          # Fail closed if Release history cannot be read. No duplicate or older tags.
+          gh api --paginate "repos/$GITHUB_REPOSITORY/releases" --jq '.[].tag_name' > /tmp/catalog-tags
+          python3 - <<'PY'
+          import os, pathlib, re
+          sequence = int(os.environ['SEQUENCE'])
+          for tag in pathlib.Path('/tmp/catalog-tags').read_text().splitlines():
+              if re.fullmatch(r'catalog-[0-9]+', tag) and int(tag[8:]) >= sequence:
+                  raise SystemExit('Sequence must exceed all prior catalog releases')
+          PY
+      - name: Sign
+        env:
+          CATALOG_SIGNING_PRIVATE_KEY: ${{ secrets.CATALOG_SIGNING_PRIVATE_KEY }}
+          CATALOG_SIGNING_PASSPHRASE: ${{ secrets.CATALOG_SIGNING_PASSPHRASE }}
+        run: |
+          export GNUPGHOME="$RUNNER_TEMP/catalog-gnupg"
+          mkdir -m 700 "$GNUPGHOME"
+          trap 'rm -rf "$GNUPGHOME"' EXIT
+          test -n "$CATALOG_SIGNING_PRIVATE_KEY"
+          printf '%s' "$CATALOG_SIGNING_PRIVATE_KEY" | gpg --batch --import
+          fingerprint=$(cat catalog-fingerprint.txt)
+          printf '%s' "$CATALOG_SIGNING_PASSPHRASE" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --local-user "$fingerprint" --armor --detach-sign --output dist/catalog.json.sig dist/catalog.json
+          gpgv --keyring "$PWD/catalog-public.gpg" dist/catalog.json.sig dist/catalog.json
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SEQUENCE: ${{ inputs.sequence }}
+        run: gh release create "catalog-$SEQUENCE" dist/catalog.json dist/catalog.json.sig --target "$GITHUB_SHA" --latest --title "Application catalog $SEQUENCE" --notes "Signed NextKde application directory."
