@@ -4,7 +4,7 @@
 
 Repositório de submissões para Configurações → **Aplicativos e serviços**. Os pacotes ficam nos **GitHub Releases** dos desenvolvedores. Aqui publicamos um catálogo assinado de identidades e locais de lançamento, sem scripts de instalação.
 
-A integração do cliente está em desenvolvimento e exige aceitação em VM; este repositório não prova que versões já distribuídas a suportam. As publicações do catálogo e do cliente são independentes. Consulte o [PR #340 do cliente](https://github.com/NextKde/NextKde/pull/340) e o [primeiro catálogo assinado](https://github.com/NextKde/appCatalog/releases/tag/catalog-1).
+A integração do cliente já foi incorporada à branch `main` do NextKde; isso não significa que versões já distribuídas a suportam. As publicações do catálogo e do cliente são independentes. A implementação e a validação em VM/CI estão no [PR #340 do cliente](https://github.com/NextKde/NextKde/pull/340). O [primeiro catálogo assinado](https://github.com/NextKde/appCatalog/releases/tag/catalog-1) já foi publicado.
 
 ## Publicar um aplicativo
 
@@ -27,4 +27,4 @@ A assinatura manual pode manter a chave fora do GitHub. Para usar o workflow, os
 
 Use seu próprio repositório GitHub, chave e `sourceId`; adapte o workflow e publique `catalog.json` e `catalog.json.sig` num Release estável. Nas configurações de origens, o usuário informa ID, `owner/repository`, arquivo público binário `.gpg` e impressão digital completa, aceitando explicitamente a confiança. Obtenha a impressão digital por um canal confiável independente. IDs de apps em conflito não podem ser sobrescritos silenciosamente. Remover uma origem preserva o gerenciamento dos apps instalados.
 
-O agente verifica atualizações e avisa, mas não instala automaticamente. Consulte a [arquitetura no NextKde](https://github.com/NextKde/NextKde/blob/0f8fe2779a049af7d873c7538ab310e67d1fc8be/docs/app-store/SignedCatalog.md).
+O agente verifica atualizações e avisa, mas não instala automaticamente. Consulte a [arquitetura no NextKde](https://github.com/NextKde/NextKde/blob/main/docs/app-store/SignedCatalog.md).

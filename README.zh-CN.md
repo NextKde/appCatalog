@@ -2,11 +2,11 @@
 
 [English](README.md) · **简体中文** · [Português (Brasil)](README.pt-BR.md)
 
-NextKde「应用与服务」的应用投稿目录。[首份签名目录 catalog-1](https://github.com/NextKde/appCatalog/releases/tag/catalog-1)已发布；客户端改动见 [NextKde PR #340](https://github.com/NextKde/NextKde/pull/340)。现有已发行客户端不一定支持该目录，目录条目也不代表应用已发布可安装包。
+NextKde「应用与服务」的应用投稿目录。[首份签名目录 catalog-1](https://github.com/NextKde/appCatalog/releases/tag/catalog-1)已发布；客户端接入已合并至主仓库 `main`，实现与虚拟机/CI 验收见 [NextKde PR #340](https://github.com/NextKde/NextKde/pull/340)。现有已发行客户端不一定支持该目录，目录条目也不代表应用已发布可安装包。
 
 应用安装包保存在开发者自己的 **GitHub Releases**。本仓库只维护应用身份、介绍和发行仓库，不托管或执行第三方安装脚本。
 
-投稿者请同时阅读 [Qt runtime 与打包指南](docs/QtRuntime.zh-CN.md)、[多语言约定](docs/Localization.zh-CN.md)和[发行协议](RELEASE-CONTRACT.zh-CN.md)。客户端架构见 [NextKde 主仓库](https://github.com/NextKde/NextKde/blob/0f8fe2779a049af7d873c7538ab310e67d1fc8be/docs/app-store/SignedCatalog.zh-CN.md)。
+投稿者请同时阅读 [Qt runtime 与打包指南](docs/QtRuntime.zh-CN.md)、[多语言约定](docs/Localization.zh-CN.md)和[发行协议](RELEASE-CONTRACT.zh-CN.md)。客户端架构见 [NextKde 主仓库](https://github.com/NextKde/NextKde/blob/main/docs/app-store/SignedCatalog.zh-CN.md)。
 
 ## 开发者如何上架
 

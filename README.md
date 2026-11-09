@@ -5,7 +5,7 @@
 The submission repository for NextKde Settings → **Applications and services**.
 Applications live in their developers' **GitHub Releases**. This repository publishes a signed list of approved application identities and release locations; it does not host installers or execute submission scripts.
 
-The client integration is under development. A repository entry alone does not mean an application is available in an existing NextKde release: the client must support signed catalogs, and the application must publish a compatible package. Catalog releases and client releases are separate. The client change is tracked in [NextKde PR #340](https://github.com/NextKde/NextKde/pull/340); [catalog-1](https://github.com/NextKde/appCatalog/releases/tag/catalog-1) is the first signed directory.
+The client integration is merged into NextKde `main`. A repository entry alone does not mean an application is available in an existing NextKde release: the client must support signed catalogs, and the application must publish a compatible package. Catalog releases and client releases are separate. The implementation and VM/CI validation are recorded in [NextKde PR #340](https://github.com/NextKde/NextKde/pull/340); [catalog-1](https://github.com/NextKde/appCatalog/releases/tag/catalog-1) is the first signed directory.
 
 ## Submit an application
 
@@ -45,4 +45,4 @@ Use the same catalog format in your own GitHub repository, with your own signing
 
 Users add the source in Settings → Applications and services → Manage application sources, supplying its ID, GitHub `owner/repository`, binary `.gpg` public-key file and full fingerprint, then explicitly accepting trust. Obtain the fingerprint through an independently trusted channel. The source ID must match the signed document. Sources cannot silently replace each other's app IDs. Removing a source keeps installed app management and rollback-protection history.
 
-The [NextKde architecture guide](https://github.com/NextKde/NextKde/blob/0f8fe2779a049af7d873c7538ab310e67d1fc8be/docs/app-store/SignedCatalog.md) describes the client and automatic update notifications. Settings lists available versions; the background agent checks metadata and notifies, but does not install updates automatically.
+The [NextKde architecture guide](https://github.com/NextKde/NextKde/blob/main/docs/app-store/SignedCatalog.md) describes the client and automatic update notifications. Settings lists available versions; the background agent checks metadata and notifies, but does not install updates automatically.
