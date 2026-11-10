@@ -22,7 +22,7 @@ jobs:
           SEQUENCE: ${{ inputs.sequence }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          python3 build_catalog.py --source-id nextkde --sequence "$SEQUENCE"
+          python3 build_catalog.py --source-id nextkde --sequence "$SEQUENCE" --repository "$GITHUB_REPOSITORY" --revision "$GITHUB_SHA"
           # Fail closed if Release history cannot be read. No duplicate or older tags.
           gh api --paginate "repos/$GITHUB_REPOSITORY/releases" --jq '.[].tag_name' > /tmp/catalog-tags
           python3 - <<'PY'

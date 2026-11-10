@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "appId": "org.nextks.calculator",
+  "version": "0.2.2",
+  "revision": "9cb297acf5bf369a231e99a2aeb4ef37d70228ab",
+  "bundles": {
+    "x86_64": {
+      "ref": "app/org.nextks.calculator/x86_64/stable",
+      "commit": "47c4f217bea2882bd4eb96afa0e67a72ea79b159baa70a56fb270da199bdb4db",
+      "asset": "org.nextks.calculator-0.2.2-x86_64.flatpak",
+      "size": 661904,
+      "sha256": "24c391c880f8195a107f7135b256cf106fafdb8cab2c3bec7fe23057810f636b",
+      "metadata": "W0FwcGxpY2F0aW9uXQpuYW1lPW9yZy5uZXh0a3MuY2FsY3VsYXRvcgpydW50aW1lPW9yZy5rZGUuUGxhdGZvcm0veDg2XzY0LzYuMTEKc2RrPW9yZy5rZGUuU2RrL3g4Nl82NC82LjExCmNvbW1hbmQ9a29zLWNhbGN1bGF0b3IKCltDb250ZXh0XQpzaGFyZWQ9aXBjOwpzb2NrZXRzPXgxMTt3YXlsYW5kO2ZhbGxiYWNrLXgxMTsKZGV2aWNlcz1kcmk7CmZpbGVzeXN0ZW1zPXhkZy1jb25maWcva2RlZ2xvYmFsczpybzsKCltTZXNzaW9uIEJ1cyBQb2xpY3ldCmNvbS5jYW5vbmljYWwuQXBwTWVudS5SZWdpc3RyYXI9dGFsawpvcmcua2RlLmtjb25maWcubm90aWZ5PXRhbGsKb3JnLmtkZS5LR2xvYmFsU2V0dGluZ3M9dGFsawoKW0V4dGVuc2lvbiBvcmcubmV4dGtzLmNhbGN1bGF0b3IuRGVidWddCmRpcmVjdG9yeT1saWIvZGVidWcKYXV0b2RlbGV0ZT10cnVlCm5vLWF1dG9kb3dubG9hZD10cnVlCgpbQnVpbGRdCmJ1aWx0LWV4dGVuc2lvbnM9b3JnLm5leHRrcy5jYWxjdWxhdG9yLkRlYnVnO29yZy5uZXh0a3MuY2FsY3VsYXRvci5Tb3VyY2VzOwo=",
+      "metadataSha256": "cf8a25e04dbf57516b3d9b3a52fb335a7993b31a23b0e274bae475fa48de7649",
+      "runtime": {
+        "ref": "runtime/org.kde.Platform/x86_64/6.11"
+      },
+      "requiredExtensions": [],
+      "installedSize": 2867968
+    }
+  }
+}

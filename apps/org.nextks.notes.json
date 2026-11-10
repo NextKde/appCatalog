@@ -14,5 +14,11 @@
   },
   "repository": "NextKde/NkNotes",
   "manifest": "org.nextks.notes.flatpak-release.json",
-  "status": "active"
+  "status": "active",
+  "icon": "icons/org.nextks.notes.png",
+  "release": {
+    "version": "0.1.0",
+    "tag": "v0.1.0",
+    "manifestFile": "releases/org.nextks.notes.flatpak-release.json"
+  }
 }
