@@ -1,0 +1,18 @@
+{
+  "appId": "org.nextkde.NkMail",
+  "key": "nkmail",
+  "format": "flatpak",
+  "name": {
+    "en": "NkMail",
+    "zh-CN": "NkMail 邮件",
+    "pt-BR": "NkMail"
+  },
+  "description": {
+    "en": "Read, search and compose email across multiple accounts",
+    "zh-CN": "管理多个账号，阅读、搜索和撰写邮件",
+    "pt-BR": "Leia, pesquise e escreva e-mails em várias contas"
+  },
+  "repository": "NextKde/NkMail",
+  "manifest": "flatpak-release.json",
+  "status": "active"
+}
