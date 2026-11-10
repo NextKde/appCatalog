@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "appId": "org.nextks.weather",
+  "version": "0.2.2",
+  "revision": "9cb297acf5bf369a231e99a2aeb4ef37d70228ab",
+  "bundles": {
+    "x86_64": {
+      "ref": "app/org.nextks.weather/x86_64/stable",
+      "commit": "f5c1bd3e411ba5a15ba81b84caad41cede8ff65bef9d70304ad23094b2642eda",
+      "asset": "org.nextks.weather-0.2.2-x86_64.flatpak",
+      "size": 3407480,
+      "sha256": "c81ab150006b15d418a355269e6b8f123902986a71beffc867e1d713b250c329",
+      "metadata": "W0FwcGxpY2F0aW9uXQpuYW1lPW9yZy5uZXh0a3Mud2VhdGhlcgpydW50aW1lPW9yZy5rZGUuUGxhdGZvcm0veDg2XzY0LzYuMTEKc2RrPW9yZy5rZGUuU2RrL3g4Nl82NC82LjExCmNvbW1hbmQ9a29zLXdlYXRoZXIKCltDb250ZXh0XQpzaGFyZWQ9bmV0d29yaztpcGM7CnNvY2tldHM9eDExO3dheWxhbmQ7ZmFsbGJhY2steDExOwpkZXZpY2VzPWRyaTsKZmlsZXN5c3RlbXM9eGRnLWNvbmZpZy9rZGVnbG9iYWxzOnJvOwoKW1Nlc3Npb24gQnVzIFBvbGljeV0KY29tLmNhbm9uaWNhbC5BcHBNZW51LlJlZ2lzdHJhcj10YWxrCm9yZy5rZGUua2NvbmZpZy5ub3RpZnk9dGFsawpvcmcua2RlLktHbG9iYWxTZXR0aW5ncz10YWxrCgpbRXh0ZW5zaW9uIG9yZy5uZXh0a3Mud2VhdGhlci5EZWJ1Z10KZGlyZWN0b3J5PWxpYi9kZWJ1ZwphdXRvZGVsZXRlPXRydWUKbm8tYXV0b2Rvd25sb2FkPXRydWUKCltCdWlsZF0KYnVpbHQtZXh0ZW5zaW9ucz1vcmcubmV4dGtzLndlYXRoZXIuRGVidWc7b3JnLm5leHRrcy53ZWF0aGVyLlNvdXJjZXM7Cg==",
+      "metadataSha256": "8c09d31e0127234aa8759b5decf2f0405fa058f9d0ebe9afe80714f3b0deb78f",
+      "runtime": {
+        "ref": "runtime/org.kde.Platform/x86_64/6.11"
+      },
+      "requiredExtensions": [],
+      "installedSize": 12319884
+    }
+  }
+}

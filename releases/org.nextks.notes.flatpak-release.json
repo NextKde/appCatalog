@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "appId": "org.nextks.notes",
+  "version": "0.1.0",
+  "revision": "197e8336b03abd72418b48f2454607d752b8d39b",
+  "bundles": {
+    "x86_64": {
+      "asset": "org.nextks.notes-0.1.0-x86_64.flatpak",
+      "ref": "app/org.nextks.notes/x86_64/stable",
+      "commit": "cd2d3fc26111a97c290591ea12ab01ce7431b69688967463adc92a8aa67df04c",
+      "sha256": "776bbabd95a46b5c76c24d40dd9f71159fceef14d5830b89c5913467d86a61a6",
+      "size": 137756264,
+      "metadata": "W0FwcGxpY2F0aW9uXQpuYW1lPW9yZy5uZXh0a3Mubm90ZXMKcnVudGltZT1vcmcua2RlLlBsYXRmb3JtL3g4Nl82NC82LjExCnNkaz1vcmcua2RlLlNkay94ODZfNjQvNi4xMQpiYXNlPWFwcC9pby5xdC5xdHdlYmVuZ2luZS5CYXNlQXBwL3g4Nl82NC82LjExCmNvbW1hbmQ9bmV4dG5vdGVzCgpbQ29udGV4dF0Kc2hhcmVkPWlwYzsKc29ja2V0cz14MTE7d2F5bGFuZDtmYWxsYmFjay14MTE7CmRldmljZXM9ZHJpOwpmaWxlc3lzdGVtcz14ZGctY29uZmlnL2tkZWdsb2JhbHM6cm87CgpbU2Vzc2lvbiBCdXMgUG9saWN5XQpjb20uY2Fub25pY2FsLkFwcE1lbnUuUmVnaXN0cmFyPXRhbGsKb3JnLmtkZS5rY29uZmlnLm5vdGlmeT10YWxrCm9yZy5rZGUuS0dsb2JhbFNldHRpbmdzPXRhbGsKCltFbnZpcm9ubWVudF0KUVRXRUJFTkdJTkVQUk9DRVNTX1BBVEg9L2FwcC9iaW4vUXRXZWJFbmdpbmVQcm9jZXNzClFUX1FQQV9QTEFURk9STVRIRU1FPXhkZ2Rlc2t0b3Bwb3J0YWwKCltFeHRlbnNpb24gb3JnLm5leHRrcy5ub3Rlcy5EZWJ1Z10KZGlyZWN0b3J5PWxpYi9kZWJ1ZwphdXRvZGVsZXRlPXRydWUKbm8tYXV0b2Rvd25sb2FkPXRydWUKCltCdWlsZF0KYnVpbHQtZXh0ZW5zaW9ucz1vcmcubmV4dGtzLm5vdGVzLkRlYnVnO29yZy5uZXh0a3Mubm90ZXMuU291cmNlczsK",
+      "metadataSha256": "ae48f4b4cc700fa2eb3804dcf5397a08aab24ee6c8003cb9c4b1327485bc3f72",
+      "installedSize": 514692270,
+      "runtime": {
+        "ref": "runtime/org.kde.Platform/x86_64/6.11"
+      },
+      "requiredExtensions": []
+    }
+  }
+}

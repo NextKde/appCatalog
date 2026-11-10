@@ -4,7 +4,7 @@
 
 NextKde「应用与服务」的应用投稿目录。[首份签名目录 catalog-1](https://github.com/NextKde/appCatalog/releases/tag/catalog-1)已发布；客户端接入已合并至主仓库 `main`，实现与虚拟机/CI 验收见 [NextKde PR #340](https://github.com/NextKde/NextKde/pull/340)。现有已发行客户端不一定支持该目录，目录条目也不代表应用已发布可安装包。
 
-应用安装包保存在开发者自己的 **GitHub Releases**。本仓库只维护应用身份、介绍和发行仓库，不托管或执行第三方安装脚本。
+应用安装包保存在开发者自己的 **GitHub Releases**。本仓库维护应用身份、介绍、批准版本、发行清单和图标，不托管或执行第三方安装脚本。
 
 投稿者请同时阅读 [Qt runtime 与打包指南](docs/QtRuntime.zh-CN.md)、[多语言约定](docs/Localization.zh-CN.md)和[发行协议](RELEASE-CONTRACT.zh-CN.md)。客户端架构见 [NextKde 主仓库](https://github.com/NextKde/NextKde/blob/main/docs/app-store/SignedCatalog.zh-CN.md)。
 
@@ -24,15 +24,17 @@ NextKde「应用与服务」的应用投稿目录。[首份签名目录 catalog-
   "description": {"en": "A small notes application", "zh-CN": "轻量笔记应用"},
   "repository": "example-org/notes",
   "manifest": "flatpak-release.json",
+  "icon": "icons/org.example.Notes.png",
+  "release": {"version": "1.2.0", "tag": "v1.2.0", "manifestFile": "releases/org.example.Notes.flatpak-release.json"},
   "status": "active"
 }
 ```
 
 `repository` 必须是 GitHub 的 `owner/repository`。当前只安装 Flatpak；其他包格式需要客户端对应后端，不能通过目录绕过。
 
-可选 `publisher` 包含 `fingerprint`（完整主密钥指纹）及 `publicKey`（二进制公钥的 Base64）。一旦配置，客户端严格要求 `.sig` 和包内 commit 签名，不会因签名缺失或失败退回无签名模式。没有配置时依赖已批准的 GitHub 仓库、HTTPS 和 SHA-256；仓库被盗后同时替换包和摘要不在该模式的防护范围内。
+可选 `publisher` 包含 `fingerprint`（完整主密钥指纹）及 `publicKey`（二进制公钥的 Base64）。一旦配置，客户端严格要求 `.sig` 和包内 commit 签名，不会因签名缺失或失败退回无签名模式。目录签名覆盖原始清单中的安装包摘要，上游同时替换包和清单也不能改变已批准的摘要；信任依赖目录维护者审核与签名密钥。
 
-发布应用新版通常不改本目录。下架可将 `status` 改为 `withdrawn` 或删除条目；停止信任可用 `revoked`。这些操作阻止后续安装/更新，不删除用户已有应用或资料。
+每个应用新版都需提交目录 PR，固定批准版本及原始发行清单；客户端只比较目录与本地版本，不逐仓库扫描。下架可将 `status` 改为 `withdrawn` 或删除条目；停止信任可用 `revoked`。这些操作阻止后续安装/更新，不删除用户已有应用或资料。
 
 ## 维护者发布目录
 
@@ -69,3 +71,5 @@ gpg --batch --armor --detach-sign --output dist/catalog.json.sig dist/catalog.js
 目录签名证明目录由受信维护者发布；摘要证明下载与发行清单一致。这些均不保证应用没有恶意行为或漏洞。
 
 开发者投稿前可使用[测试模式与 Release 选择](docs/DeveloperTesting.zh-CN.md)。测试模式保留原应用 ID，恢复正式版需自行卸载重装。
+
+投稿细节见[批准版本与仓库图标](docs/PinnedReleases.zh-CN.md)。schema 2 需要兼容的 Settings 客户端。

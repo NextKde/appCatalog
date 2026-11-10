@@ -28,3 +28,5 @@ A seleção é salva por usuário, persiste após reiniciar as Configurações e
 Alterar o modo ou a seleção de Release invalida planos e descobertas anteriores. Um bloqueio compartilhado impede alterações durante verificações de catálogo/inventário e operações de aplicativos. Resultados de uma varredura de atualização são descartados se o contexto mudar. O agente de atualização nunca confirma instalações.
 
 Contribuidores deste projeto devem compilar e validar somente em VM ou CI. Cubra separação de origens/histórico, IDs originais, planos antigos, assinaturas e hashes inválidos, tags divergentes, ordenação de pré-lançamentos, suspensão das verificações agendadas e saída sem desinstalação. Valide também instalação/atualização/desinstalação reais em uma VM isolada e a interface nos idiomas suportados.
+
+O modo normal usa versões aprovadas no catálogo. Entradas de teste sem pacote aprovado usam `release: null`; no modo de teste ainda é possível selecionar Releases diretamente. Envie PNGs e manifests conforme o [contrato de submissão](PinnedReleases.pt-BR.md).

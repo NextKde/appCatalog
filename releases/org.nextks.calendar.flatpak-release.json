@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "appId": "org.nextks.calendar",
+  "version": "0.2.2",
+  "revision": "9cb297acf5bf369a231e99a2aeb4ef37d70228ab",
+  "bundles": {
+    "x86_64": {
+      "ref": "app/org.nextks.calendar/x86_64/stable",
+      "commit": "e53c72ed45b123c6d0e72edca339bdbafb48f5923622127fcfe1706c5d165cd1",
+      "asset": "org.nextks.calendar-0.2.2-x86_64.flatpak",
+      "size": 2201216,
+      "sha256": "f37b2b30b3faa8cfe06a2d46bf278ae88956d9057b6eb2b7140e1828d1169906",
+      "metadata": "W0FwcGxpY2F0aW9uXQpuYW1lPW9yZy5uZXh0a3MuY2FsZW5kYXIKcnVudGltZT1vcmcua2RlLlBsYXRmb3JtL3g4Nl82NC82LjExCnNkaz1vcmcua2RlLlNkay94ODZfNjQvNi4xMQpjb21tYW5kPWtvcy1jYWxlbmRhcgoKW0NvbnRleHRdCnNoYXJlZD1uZXR3b3JrO2lwYzsKc29ja2V0cz14MTE7d2F5bGFuZDtmYWxsYmFjay14MTE7CmRldmljZXM9ZHJpOwpmaWxlc3lzdGVtcz14ZGctY29uZmlnL2tkZWdsb2JhbHM6cm87CgpbU2Vzc2lvbiBCdXMgUG9saWN5XQpjb20uY2Fub25pY2FsLkFwcE1lbnUuUmVnaXN0cmFyPXRhbGsKb3JnLmtkZS5rY29uZmlnLm5vdGlmeT10YWxrCm9yZy5rZGUuS0dsb2JhbFNldHRpbmdzPXRhbGsKb3JnLmZyZWVkZXNrdG9wLk5vdGlmaWNhdGlvbnM9dGFsawpvcmcubmV4dGtzLmNhbGVuZGFyLlBpbT1vd24KCltFbnZpcm9ubWVudF0KUVRfUVBBX1BMQVRGT1JNVEhFTUU9eGRnZGVza3RvcHBvcnRhbAoKW0V4dGVuc2lvbiBvcmcubmV4dGtzLmNhbGVuZGFyLkRlYnVnXQpkaXJlY3Rvcnk9bGliL2RlYnVnCmF1dG9kZWxldGU9dHJ1ZQpuby1hdXRvZG93bmxvYWQ9dHJ1ZQoKW0J1aWxkXQpidWlsdC1leHRlbnNpb25zPW9yZy5uZXh0a3MuY2FsZW5kYXIuRGVidWc7b3JnLm5leHRrcy5jYWxlbmRhci5Tb3VyY2VzOwo=",
+      "metadataSha256": "45d4ab6abb40cab8d9f5836e71cc5b46b9eeb4aac70950fa3bbe5e6592a3b278",
+      "runtime": {
+        "ref": "runtime/org.kde.Platform/x86_64/6.11"
+      },
+      "requiredExtensions": [],
+      "installedSize": 11675929
+    }
+  }
+}
