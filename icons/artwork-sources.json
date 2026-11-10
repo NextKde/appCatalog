@@ -25,7 +25,7 @@
     {
       "appId": "org.nextkde.NkMail",
       "repository": "NextKde/NkMail",
-      "revision": "03d3894d7087203202a7fa33286a028791b5e5ea",
+      "revision": "18c94ad726e7d72d90a3fcc9141e6f131b35a247",
       "path": "data/nkmail.svg",
       "svgSha256": "9a4321680293d2c92d92e76ac524609cd554d3954ed46c558274f25a07ec4c47",
       "pngSha256": "8125a1378670c85d5a7127c35c0929165dea6a41f55d75989bdd517e20a78b6a"
@@ -49,7 +49,7 @@
     {
       "appId": "org.nextks.notes",
       "repository": "NextKde/NkNotes",
-      "revision": "2ca726f3b6e951acb4b79af7c811309c60f3f6b3",
+      "revision": "e490e9c4ba8a1066596e93e61008f58042fbd7d3",
       "path": "packaging/org.nextks.notes.svg",
       "svgSha256": "613c3916becd5953654f329bfafd44aef8988bdb2ecd83c73a9c950057b69e90",
       "pngSha256": "46463262d1a6a09244d7e9bdef881c80dbc71359f674582698a4109da45d7e20"
