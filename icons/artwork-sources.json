@@ -1,0 +1,66 @@
+{
+  "updated": "2026-11-10",
+  "renderer": "Qt SVG 6.10.2 / ksvgtopng in dedicated VM",
+  "dimensions": [
+    256,
+    256
+  ],
+  "sources": [
+    {
+      "appId": "org.nextkde.KMusic",
+      "repository": "NextKde/NkMusic",
+      "revision": "0eb626a05b0b111b50c563952eccea29a94ea6a2",
+      "path": "data/kmusic.svg",
+      "svgSha256": "937ab1ca2ca8dc6c20825e0e2e81cae1acdabda162d274a5d15faa8c0868b2a9",
+      "pngSha256": "6c632b986f08e106b4f6866ef2b5e0d5153ac1e4f69fd75d0d6d9ce0ff5fbf98"
+    },
+    {
+      "appId": "org.nextkde.ListenFree",
+      "repository": "NextKde/ListenFree",
+      "revision": "f8131998df0a5bfbf1554fe4424a83fba5105b7f",
+      "path": "music_player_desktop/assets/icons/app.svg",
+      "svgSha256": "c5f00e60ed872f6fe2d150721d6c48be1accabcc9ac34513743c93c178077f92",
+      "pngSha256": "94696366403dd0959f707c122422aea1a3e5f332ad099a8e43b3c8b3e88c3829"
+    },
+    {
+      "appId": "org.nextkde.NkMail",
+      "repository": "NextKde/NkMail",
+      "revision": "18c94ad726e7d72d90a3fcc9141e6f131b35a247",
+      "path": "data/nkmail.svg",
+      "svgSha256": "9a4321680293d2c92d92e76ac524609cd554d3954ed46c558274f25a07ec4c47",
+      "pngSha256": "8125a1378670c85d5a7127c35c0929165dea6a41f55d75989bdd517e20a78b6a"
+    },
+    {
+      "appId": "org.nextks.calendar",
+      "repository": "NextKde/kos-apps",
+      "revision": "378744a6ffb3a55191d1a2db58517a91ba05dcd3",
+      "path": "apps/org.nextks.calendar/data/kos-calendar.svg",
+      "svgSha256": "8a16155b0b8ffaa1dd71ad99adfb5cba01a6c04ed3b436cc7079850236fc6385",
+      "pngSha256": "4ddd67a10ebcd66137520779d7fcd23685184c6ca45a6483600b6ad43a5468fc"
+    },
+    {
+      "appId": "org.nextks.calculator",
+      "repository": "NextKde/kos-apps",
+      "revision": "378744a6ffb3a55191d1a2db58517a91ba05dcd3",
+      "path": "apps/org.nextks.calculator/data/kos-calculator.svg",
+      "svgSha256": "c893de4938c96f43b7ea4ec54c2eaadea9adeed8106dd7f303fdb826e3ecc08d",
+      "pngSha256": "6066e6f131fbe8dc6c2b1d2377663eede59b5dbb040b7be0b8b0eaa995a5c446"
+    },
+    {
+      "appId": "org.nextks.notes",
+      "repository": "NextKde/NkNotes",
+      "revision": "e490e9c4ba8a1066596e93e61008f58042fbd7d3",
+      "path": "packaging/org.nextks.notes.svg",
+      "svgSha256": "613c3916becd5953654f329bfafd44aef8988bdb2ecd83c73a9c950057b69e90",
+      "pngSha256": "46463262d1a6a09244d7e9bdef881c80dbc71359f674582698a4109da45d7e20"
+    },
+    {
+      "appId": "org.nextks.weather",
+      "repository": "NextKde/kos-apps",
+      "revision": "378744a6ffb3a55191d1a2db58517a91ba05dcd3",
+      "path": "apps/org.nextks.weather/data/kos-weather.svg",
+      "svgSha256": "38ba406a020bbb46ebf179127bb33e1f067beb596b0ad43ad9bc17848d2c9b04",
+      "pngSha256": "24297d8f8292b611dc4483b0df8eaf2193e9914c870f29befb11197923db5dd0"
+    }
+  ]
+}
