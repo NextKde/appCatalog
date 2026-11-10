@@ -23,19 +23,21 @@ The client integration is merged into NextKde `main`. A repository entry alone d
   "description": {"en": "A small notes application", "zh-CN": "轻量笔记应用", "pt-BR": "Um aplicativo simples de notas"},
   "repository": "example-org/notes",
   "manifest": "flatpak-release.json",
+  "icon": "icons/org.example.Notes.png",
+  "release": {"version": "1.2.0", "tag": "v1.2.0", "manifestFile": "releases/org.example.Notes.flatpak-release.json"},
   "status": "active"
 }
 ```
 
 `repository` is a GitHub `owner/repository`, not a URL. Use the canonical repository name; repository renames require catalog review. `appId` and `key` are stable identities, never translated. Flatpak is the only implemented package adapter. Future formats require a client adapter; catalogs cannot supply install commands.
 
-Normal new application versions need only a new application Release. No catalog PR is needed unless its identity, description, trust policy or release location changes. To delist, remove the entry or set `status` to `withdrawn`; use `revoked` to stop trusting it. These block later installs/updates without deleting installed apps or user data.
+Every new application version requires a catalog PR selecting the approved Release and its exact manifest. Normal clients compare this directory with local versions without scanning application repositories. To delist, remove the entry or set `status` to `withdrawn`; use `revoked` to stop trusting it. These block later installs/updates without deleting installed apps or user data.
 
 ## Trust and publication
 
 Catalog signatures are mandatory; package SHA-256 is mandatory. Optional `publisher` contains a full primary-key `fingerprint` and a Base64 binary OpenPGP `publicKey`. If present, both the release manifest signature (`<manifest>.sig`) and the Flatpak commit signature are required. Failed or missing signatures never fall back to unsigned mode.
 
-Without a publisher key, package authenticity depends on the approved GitHub account and HTTPS. SHA-256 detects a mismatched download, but cannot stop an attacker controlling the repository from replacing both package and manifest. Neither signature nor hash proves that an app is benign.
+The catalog signature covers the approved package SHA-256 through the embedded manifest. Replacing an upstream package and manifest cannot change that approved hash; trust depends on the catalog maintainer and signing key. Neither signature nor hash proves that an app is benign.
 
 See [Maintainer publication](MAINTAINING.md) for secrets, expiry, sequence numbers and release steps. The seed entries retain their existing publisher signatures; catalog publication does not publish their application bundles.
 
@@ -48,3 +50,5 @@ Users add the source in Settings → Applications and services → Manage applic
 The [NextKde architecture guide](https://github.com/NextKde/NextKde/blob/main/docs/app-store/SignedCatalog.md) describes the client and automatic update notifications. Settings lists available versions; the background agent checks metadata and notifies, but does not install updates automatically.
 
 Developer preview workflow: [test mode and selected GitHub Releases](docs/DeveloperTesting.md). Test mode keeps the original app ID; restoration requires manual uninstall/reinstall.
+
+Submission details: [approved versions and repository icons](docs/PinnedReleases.md). Schema 2 requires a compatible Settings build.

@@ -42,3 +42,5 @@ Secrets. Publish the verified pair in a new stable `catalog-N` Release after
 checking the full existing Release history for a higher sequence. Use `--target`
 with the reviewed catalog repository commit and retain the signing key outside
 this checkout. Re-signing changed JSON requires a new unpublished sequence.
+
+Schema 2 catalog publication embeds approved release manifests and immutable repository icons; see [version approval](docs/PinnedReleases.md).

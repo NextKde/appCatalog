@@ -35,3 +35,5 @@ gpgv --keyring ./catalog-public.gpg dist/catalog.json.sig dist/catalog.json
 ```
 
 示例 sequence 1 仅用于新目录，已有官方目录必须使用更高序号。签名机器不运行不受信的投稿程序。
+
+schema 2 目录内嵌批准版本清单并固定仓库图标，见[版本审批](docs/PinnedReleases.zh-CN.md)。

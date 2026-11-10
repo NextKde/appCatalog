@@ -28,3 +28,5 @@ gpgv --keyring ./catalog-public.gpg dist/catalog.json.sig dist/catalog.json
 ```
 
 A sequência 1 é apenas um exemplo para catálogos novos. Não execute código de aplicativos não confiáveis na máquina de assinatura.
+
+O catálogo schema 2 incorpora manifests aprovados e ícones imutáveis; veja [aprovação de versões](docs/PinnedReleases.pt-BR.md).
