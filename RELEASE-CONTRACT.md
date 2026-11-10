@@ -1,6 +1,8 @@
 # GitHub Release / Flatpak contract
 
-[简体中文](RELEASE-CONTRACT.zh-CN.md) · [Qt runtime guide](docs/QtRuntime.md)
+[简体中文](RELEASE-CONTRACT.zh-CN.md) · [Português (Brasil)](RELEASE-CONTRACT.pt-BR.md)
+
+[Qt runtime guide](docs/QtRuntime.md)
 
 All application discovery uses `https://api.github.com/repos/OWNER/REPOSITORY/releases/latest`.
 Only published stable `vX.Y.Z` releases are accepted. Each required asset must be unique in that release.
