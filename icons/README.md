@@ -1,12 +1,27 @@
-# Application artwork
+# Application and category artwork
 
-These PNGs are catalog presentation assets, named by original application ID. All are 256-pixel previews. Keep artwork attribution and upstream licenses when replacing them.
+The application family uses a shared continuous rounded tile, soft vertical color,
+ivory paper or symbols, a fine edge and restrained depth. The user-provided Notes
+reference establishes the visual direction. These are original NextKde drawings;
+no Apple image assets are included in the category navigation.
 
-- Calendar, Calculator, Weather: NextKde/kos-apps revision `98aadc63ea1079eeade823b9ac35c974509a907f`, `apps/org.nextks.<app>/data/kos-<app>.svg`; rasterized with Qt SVG in the development VM. See `kos-apps-LICENSE`.
-- ListenFree: NextKde/ListenFree revision `69cb4cb77f28c03348efa5da2bf38ea2228e6fc6`, `music_player_desktop/assets/icons/app.png`; resized in the VM. See `listenfree-LICENSE`.
-- KMusic: existing NextKde Settings `apps/settings/icons/kmusic.svg` from commit `2df7e9497ed10af1c75a297876f4b7b28e477af5`; rasterized in the VM. See `NextKde-LICENSE`.
-- Notes: NextKde/NkNotes revision `2ca726f3b6e951acb4b79af7c811309c60f3f6b3`, `packaging/org.nextks.notes.svg`; rasterized in the VM. See `NkNotes-LICENSE` (GPL-3.0).
+Application SVGs remain canonical in their own repositories. The catalog stores
+256 × 256 RGBA PNG exports, rendered with Qt SVG in the dedicated development VM.
+ListenFree also ships a 1024 × 1024 PNG and a multiresolution Windows ICO from the
+same SVG. No external images, fonts, filters or clipping paths are needed by the
+SVGs. Category glyphs remain legible at the 18-pixel navigation size. Material
+navigation uses its existing semantic monochrome glyphs.
 
-Submissions use PNG only, at most 1024 × 1024 and 512 KiB. The publisher computes SHA-256 and an immutable raw GitHub URL containing the full catalog commit. Icons are never installer inputs. Missing/invalid icons fall back to the client's placeholder.
+## Canonical application sources
 
-- NkMail: NextKde/NkMail revision `03d3894d7087203202a7fa33286a028791b5e5ea`, `data/nkmail.svg`; rasterized in the VM. See `NkMail-LICENSE` (GPL-3.0).
+- `org.nextkde.KMusic`: `NextKde/NkMusic`, `data/kmusic.svg`.
+- `org.nextkde.ListenFree`: `NextKde/ListenFree`, `music_player_desktop/assets/icons/app.svg`.
+- `org.nextkde.NkMail`: `NextKde/NkMail`, `data/nkmail.svg`.
+- `org.nextks.calendar`: `NextKde/kos-apps`, `apps/org.nextks.calendar/data/kos-calendar.svg`.
+- `org.nextks.calculator`: `NextKde/kos-apps`, `apps/org.nextks.calculator/data/kos-calculator.svg`.
+- `org.nextks.notes`: `NextKde/NkNotes`, `packaging/org.nextks.notes.svg`.
+- `org.nextks.weather`: `NextKde/kos-apps`, `apps/org.nextks.weather/data/kos-weather.svg`.
+
+Source revision pins are recorded in `artwork-sources.json`. Existing upstream
+licenses and license copies remain applicable. Application identities, approved
+package versions, publisher keys and permissions are independent of artwork.
