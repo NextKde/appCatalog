@@ -20,3 +20,5 @@ O campo `manifest` do catálogo indica o nome do anexo JSON. O `schemaVersion` �
 Extraia os valores do pacote final. Não copie os marcadores do exemplo nem use o hash do arquivo de código-fonte. O pacote não pode incluir URLs de origem online ou runtime-repo. O cliente verifica as dependências e a origem de runtime aprovada separadamente.
 
 Se houver `publisher`, publique também `<manifest>.sig`, assinado sobre os bytes exatos do JSON, e assine o commit OSTree com a chave autorizada. Sem `publisher`, a assinatura do desenvolvedor é opcional; SHA-256, identidade, metadados, versão e recibos de instalação continuam obrigatórios. GitHub Releases é obrigatório para todos os formatos. Apenas Flatpak está implementado atualmente.
+
+O modo de teste aceita pré-lançamentos publicados selecionados explicitamente, como a tag `v1.2.0-rc.1` com a versão `1.2.0-rc.1` no manifest. A branch Flatpak continua sendo `stable`. O modo normal seleciona versões estáveis. Veja [testes para desenvolvedores](docs/DeveloperTesting.pt-BR.md).

@@ -28,3 +28,5 @@ A assinatura manual pode manter a chave fora do GitHub. Para usar o workflow, os
 Use seu próprio repositório GitHub, chave e `sourceId`; adapte o workflow e publique `catalog.json` e `catalog.json.sig` num Release estável. Nas configurações de origens, o usuário informa ID, `owner/repository`, arquivo público binário `.gpg` e impressão digital completa, aceitando explicitamente a confiança. Obtenha a impressão digital por um canal confiável independente. IDs de apps em conflito não podem ser sobrescritos silenciosamente. Remover uma origem preserva o gerenciamento dos apps instalados.
 
 O agente verifica atualizações e avisa, mas não instala automaticamente. Consulte a [arquitetura no NextKde](https://github.com/NextKde/NextKde/blob/main/docs/app-store/SignedCatalog.md).
+
+Antes da submissão, use o [modo de teste e a seleção de Releases](docs/DeveloperTesting.pt-BR.md). O ID original é mantido; para restaurar a versão normal, desinstale e reinstale manualmente.

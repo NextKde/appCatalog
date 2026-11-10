@@ -46,3 +46,5 @@ Use the same catalog format in your own GitHub repository, with your own signing
 Users add the source in Settings → Applications and services → Manage application sources, supplying its ID, GitHub `owner/repository`, binary `.gpg` public-key file and full fingerprint, then explicitly accepting trust. Obtain the fingerprint through an independently trusted channel. The source ID must match the signed document. Sources cannot silently replace each other's app IDs. Removing a source keeps installed app management and rollback-protection history.
 
 The [NextKde architecture guide](https://github.com/NextKde/NextKde/blob/main/docs/app-store/SignedCatalog.md) describes the client and automatic update notifications. Settings lists available versions; the background agent checks metadata and notifies, but does not install updates automatically.
+
+Developer preview workflow: [test mode and selected GitHub Releases](docs/DeveloperTesting.md). Test mode keeps the original app ID; restoration requires manual uninstall/reinstall.

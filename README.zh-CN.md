@@ -67,3 +67,5 @@ gpg --batch --armor --detach-sign --output dist/catalog.json.sig dist/catalog.js
 不同目录不能静默覆盖相同应用 ID。下架或移除目录后仍保留已安装应用的打开/卸载入口。
 
 目录签名证明目录由受信维护者发布；摘要证明下载与发行清单一致。这些均不保证应用没有恶意行为或漏洞。
+
+开发者投稿前可使用[测试模式与 Release 选择](docs/DeveloperTesting.zh-CN.md)。测试模式保留原应用 ID，恢复正式版需自行卸载重装。

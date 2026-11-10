@@ -41,3 +41,5 @@ If the catalog contains a `publisher`, also publish `<manifest>.sig` signed over
 Without `publisher`, no developer signature is required. The client still checks GitHub ownership routing, release identity, architecture, SHA-256, metadata, installation plan, version order and source ownership receipts.
 
 Flatpak is the first backend. The signed catalog's `format` field is the dispatch boundary for future package adapters; it does not contain arbitrary installation commands. GitHub Releases remain mandatory for every format.
+
+Developer test mode accepts explicitly selected published prereleases with tags such as `v1.2.0-rc.1`; the manifest version must be `1.2.0-rc.1`. The Flatpak branch remains `stable`. Normal catalogs/clients continue to select stable releases. See [developer testing](docs/DeveloperTesting.md).
