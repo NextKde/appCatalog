@@ -8,3 +8,5 @@ These PNGs are catalog presentation assets, named by original application ID. Al
 - Notes: NextKde/NkNotes revision `2ca726f3b6e951acb4b79af7c811309c60f3f6b3`, `packaging/org.nextks.notes.svg`; rasterized in the VM. See `NkNotes-LICENSE` (GPL-3.0).
 
 Submissions use PNG only, at most 1024 × 1024 and 512 KiB. The publisher computes SHA-256 and an immutable raw GitHub URL containing the full catalog commit. Icons are never installer inputs. Missing/invalid icons fall back to the client's placeholder.
+
+- NkMail: NextKde/NkMail revision `03d3894d7087203202a7fa33286a028791b5e5ea`, `data/nkmail.svg`; rasterized in the VM. See `NkMail-LICENSE` (GPL-3.0).

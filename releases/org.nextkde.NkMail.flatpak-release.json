@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "appId": "org.nextkde.NkMail",
+  "version": "0.1.0",
+  "revision": "4ff223d6453af784f310426783f1df6577f7dcc1",
+  "bundles": {
+    "x86_64": {
+      "asset": "org.nextkde.NkMail-0.1.0-x86_64.flatpak",
+      "ref": "app/org.nextkde.NkMail/x86_64/stable",
+      "commit": "d481ce8951b85e1e0b2252ae4daff5301d514687950bd2be30f787b94dc89823",
+      "sha256": "49ebe362ae8acd62ad6fdd38303d77b2bf4aadddedf12dc781430af0274bfd14",
+      "size": 134776112,
+      "installedSize": 511931904,
+      "metadata": "W0FwcGxpY2F0aW9uXQpuYW1lPW9yZy5uZXh0a2RlLk5rTWFpbApydW50aW1lPW9yZy5rZGUuUGxhdGZvcm0veDg2XzY0LzYuMTEKc2RrPW9yZy5rZGUuU2RrL3g4Nl82NC82LjExCmJhc2U9YXBwL2lvLnF0LnF0d2ViZW5naW5lLkJhc2VBcHAveDg2XzY0LzYuMTEKY29tbWFuZD1ua21haWwKCltDb250ZXh0XQpzaGFyZWQ9bmV0d29yaztpcGM7CnNvY2tldHM9eDExO3dheWxhbmQ7ZmFsbGJhY2steDExOwpkZXZpY2VzPWRyaTsKZmlsZXN5c3RlbXM9eGRnLWNvbmZpZy9rZGVnbG9iYWxzOnJvOwoKW1Nlc3Npb24gQnVzIFBvbGljeV0Kb3JnLmZyZWVkZXNrdG9wLnNlY3JldHM9dGFsawpvcmcuZnJlZWRlc2t0b3AuTm90aWZpY2F0aW9ucz10YWxrCm9yZy5rZGUua3dhbGxldGQ1PXRhbGsKb3JnLmtkZS5TdGF0dXNOb3RpZmllcldhdGNoZXI9dGFsawpvcmcua2RlLktHbG9iYWxTZXR0aW5ncz10YWxrCm9yZy5OZXh0S2RlLk5rTWFpbD1vd24KY29tLmNhbm9uaWNhbC5BcHBNZW51LlJlZ2lzdHJhcj10YWxrCm9yZy5rZGUua2NvbmZpZy5ub3RpZnk9dGFsawpvcmcua2RlLmt3YWxsZXRkNj10YWxrCgpbRW52aXJvbm1lbnRdClFUV0VCRU5HSU5FUFJPQ0VTU19QQVRIPS9hcHAvYmluL1F0V2ViRW5naW5lUHJvY2VzcwpRVF9RUEFfUExBVEZPUk1USEVNRT14ZGdkZXNrdG9wcG9ydGFsClFUV0VCRU5HSU5FX0RJQ1RJT05BUklFU19QQVRIPS9hcHAvcXR3ZWJlbmdpbmVfZGljdGlvbmFyaWVzCgpbRXh0ZW5zaW9uIG9yZy5uZXh0a2RlLk5rTWFpbC5EZWJ1Z10KZGlyZWN0b3J5PWxpYi9kZWJ1ZwphdXRvZGVsZXRlPXRydWUKbm8tYXV0b2Rvd25sb2FkPXRydWUKCltCdWlsZF0KYnVpbHQtZXh0ZW5zaW9ucz1vcmcubmV4dGtkZS5Oa01haWwuRGVidWc7b3JnLm5leHRrZGUuTmtNYWlsLlNvdXJjZXM7Cg==",
+      "metadataSha256": "4d394dc266d938785e822a31dc18998180af2eeeecb4d52cf12b908132f82aed",
+      "runtime": {
+        "ref": "runtime/org.kde.Platform/x86_64/6.11"
+      },
+      "requiredExtensions": []
+    }
+  }
+}

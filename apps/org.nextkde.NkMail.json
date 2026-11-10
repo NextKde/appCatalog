@@ -14,5 +14,11 @@
   },
   "repository": "NextKde/NkMail",
   "manifest": "flatpak-release.json",
-  "status": "active"
+  "status": "active",
+  "icon": "icons/org.nextkde.NkMail.png",
+  "release": {
+    "version": "0.1.0",
+    "tag": "v0.1.0",
+    "manifestFile": "releases/org.nextkde.NkMail.flatpak-release.json"
+  }
 }
