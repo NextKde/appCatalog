@@ -20,3 +20,5 @@
 实际值必须从最终包提取，不能照抄示例占位符，也不能用源码包 hash。包不能嵌入在线 origin 或 runtime-repo URL。客户端独立核对依赖计划与可信运行库来源。
 
 目录配置 publisher 时，另附对清单原始字节签名的 `<manifest>.sig`，包内 OSTree commit 也必须由该开发者密钥签名。没有 publisher 时可不签，但仍强制校验 SHA-256、身份、GitHub 路由、元数据、版本和安装来源。任何格式都必须通过 GitHub Releases；当前只实现 Flatpak。
+
+开发者测试模式允许明确选择已发布的预发行版，例如标签 `v1.2.0-rc.1` 对应清单版本 `1.2.0-rc.1`。Flatpak 分支仍为 `stable`，正常模式继续选择稳定 Release。详见[开发者测试](docs/DeveloperTesting.zh-CN.md)。
