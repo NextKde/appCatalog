@@ -17,8 +17,8 @@
   "status": "active",
   "icon": "icons/org.nextks.notes.png",
   "release": {
-    "version": "0.1.0",
-    "tag": "v0.1.0",
+    "version": "0.1.2",
+    "tag": "v0.1.2",
     "manifestFile": "releases/org.nextks.notes.flatpak-release.json"
   }
 }
