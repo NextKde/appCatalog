@@ -1,18 +1,18 @@
 {
   "schemaVersion": 2,
   "appId": "org.nextks.notes",
-  "version": "0.1.2",
-  "revision": "71779e56d8c5f95272d857a2faeaa3c79fc202f4",
+  "version": "0.1.3",
+  "revision": "261548a7f7015b055fcc6d25da55eb6264da9c5f",
   "bundles": {
     "x86_64": {
-      "asset": "org.nextks.notes-0.1.2-x86_64.flatpak",
+      "asset": "org.nextks.notes-0.1.3-x86_64.flatpak",
       "ref": "app/org.nextks.notes/x86_64/stable",
-      "commit": "1e30ecff00060651d803bc43969ea6a239541071a605bc3679cdf81fb0d4b0e0",
-      "sha256": "3c10178af997d5f0aa12a32cf2a0c296e1f2ca48fa012e339c3fbbafaafa47ba",
-      "size": 137976520,
+      "commit": "2efd9318708048c907f4da841e2d3c7fa10580fe7aaa5027be7485c08d1a3a3a",
+      "sha256": "bbbedd3af017f2ba5db6830edd7868d0016205172fe6365ad1fd49901f7794c6",
+      "size": 137731952,
       "metadata": "W0FwcGxpY2F0aW9uXQpuYW1lPW9yZy5uZXh0a3Mubm90ZXMKcnVudGltZT1vcmcua2RlLlBsYXRmb3JtL3g4Nl82NC82LjExCnNkaz1vcmcua2RlLlNkay94ODZfNjQvNi4xMQpiYXNlPWFwcC9pby5xdC5xdHdlYmVuZ2luZS5CYXNlQXBwL3g4Nl82NC82LjExCmNvbW1hbmQ9bmV4dG5vdGVzCgpbQ29udGV4dF0Kc2hhcmVkPWlwYzsKc29ja2V0cz14MTE7d2F5bGFuZDtmYWxsYmFjay14MTE7CmRldmljZXM9ZHJpOwpmaWxlc3lzdGVtcz14ZGctY29uZmlnL2tkZWdsb2JhbHM6cm87CgpbU2Vzc2lvbiBCdXMgUG9saWN5XQpjb20uY2Fub25pY2FsLkFwcE1lbnUuUmVnaXN0cmFyPXRhbGsKb3JnLmtkZS5rY29uZmlnLm5vdGlmeT10YWxrCm9yZy5rZGUuS0dsb2JhbFNldHRpbmdzPXRhbGsKCltFbnZpcm9ubWVudF0KUVRXRUJFTkdJTkVQUk9DRVNTX1BBVEg9L2FwcC9iaW4vUXRXZWJFbmdpbmVQcm9jZXNzClFUX1FQQV9QTEFURk9STVRIRU1FPXhkZ2Rlc2t0b3Bwb3J0YWwKUU1MX0lNUE9SVF9QQVRIPS9hcHAvbGliL3F0Ni9xbWw6L2FwcC9saWIvcW1sCgpbRXh0ZW5zaW9uIG9yZy5uZXh0a3Mubm90ZXMuRGVidWddCmRpcmVjdG9yeT1saWIvZGVidWcKYXV0b2RlbGV0ZT10cnVlCm5vLWF1dG9kb3dubG9hZD10cnVlCgpbQnVpbGRdCmJ1aWx0LWV4dGVuc2lvbnM9b3JnLm5leHRrcy5ub3Rlcy5EZWJ1ZztvcmcubmV4dGtzLm5vdGVzLlNvdXJjZXM7Cg==",
       "metadataSha256": "17b28e4badb48b1e800681d8b73210e50f0aa5a5dac85d13bc39026b4659ec89",
-      "installedSize": 515470543,
+      "installedSize": 515470544,
       "runtime": {
         "ref": "runtime/org.kde.Platform/x86_64/6.11"
       },
